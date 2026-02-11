@@ -14,7 +14,10 @@
     "copyright": "SaThuCoin. All rights reserved.",
     "github": "GitHub",
     "active": "Active",
-    "paused": "Paused"
+    "paused": "Paused",
+    "alt_banner": "SaThuCoin banner",
+    "alt_token_icon": "SATHU token icon",
+    "alt_mascot": "SaThuCoin mascot"
   },
   "home": {
     "hero_tagline": "Every token represents a verified act of generosity",

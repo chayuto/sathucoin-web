@@ -5,6 +5,9 @@ import BalanceChecker from "../components/BalanceChecker";
 import DeedList from "../components/DeedList";
 import AddToMetaMask from "../components/AddToMetaMask";
 
+const coinIconSrc = `${import.meta.env.BASE_URL}assets/sathu_coin.png`;
+const mascotSrc = `${import.meta.env.BASE_URL}assets/sathu_mascot.png`;
+
 function FaqItem({ question, answer }) {
   const [open, setOpen] = useState(false);
   return (
@@ -57,18 +60,34 @@ export default function Donors() {
       {/* Wallet Setup Guide */}
       <section>
         <h2 className="mb-4 text-xl font-semibold text-gray-900">{t("donors.wallet_setup_title")}</h2>
-        <ol className="list-inside list-decimal space-y-2 text-gray-700">
-          <li>{t("donors.wallet_step_1")}</li>
-          <li>{t("donors.wallet_step_2")}</li>
-          <li>{t("donors.wallet_step_3")}</li>
-          <li>{t("donors.wallet_step_4")}</li>
-          <li>{t("donors.wallet_step_5")}</li>
-        </ol>
+        <div className="flex flex-col items-start gap-6 sm:flex-row">
+          <img
+            src={mascotSrc}
+            alt={t("common.alt_mascot")}
+            className="hidden h-32 w-32 shrink-0 object-contain sm:block"
+            loading="lazy"
+          />
+          <ol className="list-inside list-decimal space-y-2 text-gray-700">
+            <li>{t("donors.wallet_step_1")}</li>
+            <li>{t("donors.wallet_step_2")}</li>
+            <li>{t("donors.wallet_step_3")}</li>
+            <li>{t("donors.wallet_step_4")}</li>
+            <li>{t("donors.wallet_step_5")}</li>
+          </ol>
+        </div>
       </section>
 
       {/* Add to MetaMask */}
       <section>
-        <h2 className="mb-2 text-xl font-semibold text-gray-900">{t("donors.add_metamask_title")}</h2>
+        <div className="mb-2 flex items-center gap-2">
+          <img
+            src={coinIconSrc}
+            alt={t("common.alt_token_icon")}
+            className="h-6 w-6 object-contain"
+            loading="lazy"
+          />
+          <h2 className="text-xl font-semibold text-gray-900">{t("donors.add_metamask_title")}</h2>
+        </div>
         <p className="mb-4 text-sm text-gray-600">{t("donors.add_metamask_desc")}</p>
         <AddToMetaMask />
       </section>

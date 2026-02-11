@@ -14,7 +14,10 @@
     "copyright": "SaThuCoin สงวนลิขสิทธิ์",
     "github": "GitHub",
     "active": "ใช้งานอยู่",
-    "paused": "หยุดชั่วคราว"
+    "paused": "หยุดชั่วคราว",
+    "alt_banner": "แบนเนอร์สาธุคอยน์",
+    "alt_token_icon": "ไอคอนโทเคน SATHU",
+    "alt_mascot": "มาสคอตสาธุคอยน์"
   },
   "home": {
     "hero_tagline": "ทุกโทเคนคือบันทึกแห่งการทำบุญที่ยืนยันแล้ว",

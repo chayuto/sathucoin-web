@@ -1,6 +1,8 @@
 import { useTranslation } from "react-i18next";
 import { CONTRACT_ADDRESS, BASESCAN_URL, GITHUB_URL } from "../config";
 
+const mascotSrc = `${import.meta.env.BASE_URL}assets/sathu_mascot.png`;
+
 export default function About() {
   const { t } = useTranslation();
 
@@ -18,8 +20,18 @@ export default function About() {
       {/* Mission */}
       <section>
         <h2 className="mb-4 text-xl font-semibold text-gray-900">{t("about.mission_title")}</h2>
-        <p className="text-gray-700">{t("about.mission_p1")}</p>
-        <p className="mt-2 text-gray-700">{t("about.mission_p2")}</p>
+        <div className="flex flex-col items-start gap-6 sm:flex-row">
+          <img
+            src={mascotSrc}
+            alt={t("common.alt_mascot")}
+            className="hidden h-36 w-36 shrink-0 object-contain sm:block"
+            loading="lazy"
+          />
+          <div>
+            <p className="text-gray-700">{t("about.mission_p1")}</p>
+            <p className="mt-2 text-gray-700">{t("about.mission_p2")}</p>
+          </div>
+        </div>
       </section>
 
       {/* How It Works */}

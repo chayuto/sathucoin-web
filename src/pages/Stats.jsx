@@ -5,6 +5,8 @@ import { useTokenStats } from "../hooks/useTokenStats";
 import DeedList from "../components/DeedList";
 import { CONTRACT_ADDRESS, BASESCAN_URL, TOKEN_DECIMALS } from "../config";
 
+const coinIconSrc = `${import.meta.env.BASE_URL}assets/sathu_coin.png`;
+
 export default function Stats() {
   const { t } = useTranslation();
   const {
@@ -20,9 +22,9 @@ export default function Stats() {
 
   const supplyData = totalSupply !== undefined && cap !== undefined
     ? [
-        { name: t("stats.minted"), value: Number(formatUnits(totalSupply, TOKEN_DECIMALS)) },
-        { name: t("stats.remaining"), value: Number(formatUnits(cap - totalSupply, TOKEN_DECIMALS)) },
-      ]
+      { name: t("stats.minted"), value: Number(formatUnits(totalSupply, TOKEN_DECIMALS)) },
+      { name: t("stats.remaining"), value: Number(formatUnits(cap - totalSupply, TOKEN_DECIMALS)) },
+    ]
     : [];
 
   const dailyPercentage =
@@ -72,8 +74,14 @@ export default function Stats() {
       <section>
         <h2 className="mb-4 text-xl font-semibold text-gray-900">{t("stats.daily_mint_title")}</h2>
         <div className="mb-2 flex justify-between text-sm text-gray-600">
-          <span>{t("stats.daily_minted")}: {dailyMintedFormatted || "0"} SATHU</span>
-          <span>{t("stats.daily_limit")}: {maxDailyMintFormatted || t("common.loading")} SATHU</span>
+          <span className="flex items-center gap-1">
+            <img src={coinIconSrc} alt={t("common.alt_token_icon")} className="h-4 w-4 object-contain" />
+            {t("stats.daily_minted")}: {dailyMintedFormatted || "0"} SATHU
+          </span>
+          <span className="flex items-center gap-1">
+            <img src={coinIconSrc} alt={t("common.alt_token_icon")} className="h-4 w-4 object-contain" />
+            {t("stats.daily_limit")}: {maxDailyMintFormatted || t("common.loading")} SATHU
+          </span>
         </div>
         <div className="h-3 w-full overflow-hidden rounded-full bg-gray-200">
           <div

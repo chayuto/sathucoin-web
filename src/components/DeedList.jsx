@@ -3,6 +3,8 @@ import { formatUnits } from "viem";
 import { useDeedEvents } from "../hooks/useDeedEvents";
 import { BASESCAN_URL, TOKEN_DECIMALS } from "../config";
 
+const mascotSrc = `${import.meta.env.BASE_URL}assets/sathu_mascot.png`;
+
 function truncateAddress(address) {
   return `${address.slice(0, 6)}...${address.slice(-4)}`;
 }
@@ -16,7 +18,17 @@ export default function DeedList({ address, limit }) {
   const displayDeeds = limit ? deeds.slice(0, limit) : deeds;
 
   if (displayDeeds.length === 0) {
-    return <p className="text-sm text-gray-500">{t("donors.no_deeds")}</p>;
+    return (
+      <div className="flex flex-col items-center gap-4 py-8">
+        <img
+          src={mascotSrc}
+          alt={t("common.alt_mascot")}
+          className="h-24 w-24 object-contain opacity-80"
+          loading="lazy"
+        />
+        <p className="text-sm text-gray-500">{t("donors.no_deeds")}</p>
+      </div>
+    );
   }
 
   return (

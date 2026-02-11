@@ -11,6 +11,8 @@ const navLinks = [
   { path: "/about", key: "common.nav_about" },
 ];
 
+const coinIconSrc = `${import.meta.env.BASE_URL}assets/sathu_coin.png`;
+
 export default function Navbar() {
   const { t } = useTranslation();
   const location = useLocation();
@@ -19,7 +21,12 @@ export default function Navbar() {
   return (
     <nav className="sticky top-0 z-50 border-b border-gray-200 bg-white/95 backdrop-blur">
       <div className="mx-auto flex max-w-6xl items-center justify-between px-4 py-3">
-        <Link to="/" className="text-xl font-bold text-base-blue">
+        <Link to="/" className="flex items-center gap-2 text-xl font-bold text-base-blue">
+          <img
+            src={coinIconSrc}
+            alt={t("common.alt_token_icon")}
+            className="h-8 w-8 object-contain"
+          />
           SaThuCoin
         </Link>
 
