@@ -23,6 +23,6 @@ vi.mock("./hooks/useDeedEvents", () => ({
 describe("App", () => {
   it("renders without crashing", () => {
     render(<App />);
-    expect(screen.getByText("SaThuCoin")).toBeInTheDocument();
+    expect(screen.getAllByText("SaThuCoin").length).toBeGreaterThan(0);
   });
 });
