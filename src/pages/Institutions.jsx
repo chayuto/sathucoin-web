@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { useTranslation } from "react-i18next";
+import { HiOutlineDevicePhoneMobile, HiOutlineClipboardDocumentList, HiOutlineCurrencyDollar, HiOutlinePencilSquare } from "react-icons/hi2";
 import { CONTRACT_ADDRESS, BASESCAN_URL } from "../config";
 
 function FaqItem({ question, answer }) {
@@ -25,15 +26,22 @@ function FaqItem({ question, answer }) {
   );
 }
 
+const stepIcons = [
+  <HiOutlineDevicePhoneMobile key="1" className="h-5 w-5" />,
+  <HiOutlineClipboardDocumentList key="2" className="h-5 w-5" />,
+  <HiOutlineCurrencyDollar key="3" className="h-5 w-5" />,
+  <HiOutlinePencilSquare key="4" className="h-5 w-5" />,
+];
+
 export default function Institutions() {
   const { t } = useTranslation();
   const mascotSrc = `${import.meta.env.BASE_URL}assets/sathu_mascot.png`;
 
   const steps = [
-    { num: "1", text: t("institutions.how_step_1"), emoji: "📱" },
-    { num: "2", text: t("institutions.how_step_2"), emoji: "📋" },
-    { num: "3", text: t("institutions.how_step_3"), emoji: "🪙" },
-    { num: "4", text: t("institutions.how_step_4"), emoji: "📝" },
+    { num: "1", text: t("institutions.how_step_1") },
+    { num: "2", text: t("institutions.how_step_2") },
+    { num: "3", text: t("institutions.how_step_3") },
+    { num: "4", text: t("institutions.how_step_4") },
   ];
 
   const faqs = [
@@ -72,10 +80,10 @@ export default function Institutions() {
       <section className="animate-fade-in-up-delay-2">
         <h2 className="gold-underline mb-5 text-lg font-bold text-warm-900">{t("institutions.how_it_works_title")}</h2>
         <div className="grid gap-4 sm:grid-cols-2">
-          {steps.map((step) => (
+          {steps.map((step, i) => (
             <div key={step.num} className="glass-card rounded-2xl p-5 flex items-start gap-4">
-              <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-base-blue text-lg font-bold text-white shadow-sm">
-                {step.emoji}
+              <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-base-blue text-white shadow-sm">
+                {stepIcons[i]}
               </div>
               <div>
                 <span className="text-xs font-bold text-base-blue uppercase tracking-wider">

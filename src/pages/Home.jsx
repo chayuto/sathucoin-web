@@ -1,6 +1,7 @@
 import { useTranslation } from "react-i18next";
 import { Link } from "react-router-dom";
 import { formatUnits } from "viem";
+import { HiOutlineHeart, HiOutlineBuildingLibrary, HiOutlineChartBarSquare } from "react-icons/hi2";
 import { useTokenStats } from "../hooks/useTokenStats";
 import StatsCard from "../components/StatsCard";
 import SupplyProgress from "../components/SupplyProgress";
@@ -23,22 +24,25 @@ export default function Home() {
       to: "/donors",
       title: t("home.card_donors_title"),
       desc: t("home.card_donors_desc"),
-      emoji: "🙏",
+      icon: <HiOutlineHeart className="h-7 w-7" />,
       gradient: "from-blue-500/10 to-sathu-gold/10",
+      iconColor: "text-base-blue",
     },
     {
       to: "/institutions",
       title: t("home.card_institutions_title"),
       desc: t("home.card_institutions_desc"),
-      emoji: "🏛️",
+      icon: <HiOutlineBuildingLibrary className="h-7 w-7" />,
       gradient: "from-sathu-gold/10 to-orange-500/10",
+      iconColor: "text-sathu-gold",
     },
     {
       to: "/stats",
       title: t("home.card_stats_title"),
       desc: t("home.card_stats_desc"),
-      emoji: "📊",
+      icon: <HiOutlineChartBarSquare className="h-7 w-7" />,
       gradient: "from-green-500/10 to-blue-500/10",
+      iconColor: "text-base-blue",
     },
   ];
 
@@ -102,7 +106,7 @@ export default function Home() {
               to={card.to}
               className={`group glass-card rounded-2xl p-6 bg-gradient-to-br ${card.gradient} hover:shadow-lg transition-all duration-300`}
             >
-              <div className="mb-3 text-3xl">{card.emoji}</div>
+              <div className={`mb-3 ${card.iconColor}`}>{card.icon}</div>
               <h3 className="text-lg font-bold text-warm-900 group-hover:text-sathu-gold transition-colors">
                 {card.title}
               </h3>
