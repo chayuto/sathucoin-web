@@ -1,53 +1,50 @@
 import { useTranslation } from "react-i18next";
-import { formatUnits } from "viem";
-import { useDeedEvents } from "../hooks/useDeedEvents";
-import { BASESCAN_URL, TOKEN_DECIMALS } from "../config";
 
-function truncateAddress(address) {
-  return `${address.slice(0, 6)}...${address.slice(-4)}`;
-}
-
-export default function DeedList({ address, limit }) {
+export default function DeedList({ deeds, loading }) {
   const { t } = useTranslation();
-  const { deeds, isLoading } = useDeedEvents(address);
+  const mascotSrc = `${import.meta.env.BASE_URL}assets/sathu_mascot.png`;
 
-  if (isLoading) return <p className="text-sm text-gray-500">{t("common.loading")}</p>;
+  if (loading) {
+    return (
+      <div className="flex items-center justify-center py-12">
+        <div className="h-8 w-8 rounded-full border-3 border-sathu-gold/30 border-t-sathu-gold animate-spin" />
+      </div>
+    );
+  }
 
-  const displayDeeds = limit ? deeds.slice(0, limit) : deeds;
-
-  if (displayDeeds.length === 0) {
-    return <p className="text-sm text-gray-500">{t("donors.no_deeds")}</p>;
+  if (!deeds || deeds.length === 0) {
+    return (
+      <div className="flex flex-col items-center py-12 text-center animate-fade-in-up">
+        <img
+          src={mascotSrc}
+          alt={t("common.alt_mascot")}
+          className="mb-4 h-28 w-28 object-contain animate-float"
+          loading="lazy"
+        />
+        <p className="text-warm-800/50 text-sm">{t("donors.no_deeds")}</p>
+      </div>
+    );
   }
 
   return (
-    <div className="overflow-x-auto">
+    <div className="overflow-hidden rounded-2xl border border-warm-200">
       <table className="w-full text-left text-sm">
         <thead>
-          <tr className="border-b border-gray-200">
-            {!address && <th className="pb-2 pr-4 font-medium text-gray-500">{t("stats.recipient")}</th>}
-            <th className="pb-2 pr-4 font-medium text-gray-500">{t("donors.deed_name")}</th>
-            <th className="pb-2 font-medium text-gray-500">{t("donors.deed_amount")}</th>
+          <tr className="bg-warm-100">
+            <th className="px-4 py-3 font-semibold text-warm-800/70">{t("donors.deed_name")}</th>
+            <th className="px-4 py-3 font-semibold text-warm-800/70">{t("donors.deed_amount")}</th>
+            <th className="px-4 py-3 font-semibold text-warm-800/70">{t("donors.deed_date")}</th>
           </tr>
         </thead>
         <tbody>
-          {displayDeeds.map((deed, i) => (
-            <tr key={i} className="border-b border-gray-100">
-              {!address && (
-                <td className="py-2 pr-4">
-                  <a
-                    href={`${BASESCAN_URL}/address/${deed.recipient}`}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-base-blue hover:underline"
-                  >
-                    {truncateAddress(deed.recipient)}
-                  </a>
-                </td>
-              )}
-              <td className="py-2 pr-4 text-gray-700">{deed.deed}</td>
-              <td className="py-2 text-gray-900 font-medium">
-                {Number(formatUnits(deed.amount, TOKEN_DECIMALS)).toLocaleString(undefined, { maximumFractionDigits: 2 })} SATHU
-              </td>
+          {deeds.map((deed, i) => (
+            <tr
+              key={i}
+              className="border-t border-warm-200/60 bg-white/60 transition-colors hover:bg-sathu-gold-light/30"
+            >
+              <td className="px-4 py-3 text-warm-900">{deed.name}</td>
+              <td className="px-4 py-3 font-medium text-warm-900">{deed.amount}</td>
+              <td className="px-4 py-3 text-warm-800/60">{deed.date}</td>
             </tr>
           ))}
         </tbody>

@@ -1,5 +1,5 @@
 import { render, screen } from "@testing-library/react";
-import { describe, it, expect, vi } from "vitest";
+import { describe, it, expect, vi, beforeAll } from "vitest";
 import { MemoryRouter } from "react-router-dom";
 import { I18nextProvider } from "react-i18next";
 import i18n from "../../i18n";
@@ -18,6 +18,10 @@ vi.mock("../../hooks/useTokenStats", () => ({
     maxDailyMintFormatted: "500,000",
   }),
 }));
+
+beforeAll(async () => {
+  await i18n.changeLanguage("en");
+});
 
 describe("Home", () => {
   it("renders hero tagline", () => {
