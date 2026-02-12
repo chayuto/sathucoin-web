@@ -3,6 +3,7 @@ import { describe, it, expect, vi, beforeEach } from "vitest";
 import { useDeedEvents } from "../useDeedEvents";
 
 const mockGetLogs = vi.fn();
+const mockGetBlockNumber = vi.fn();
 const mockUsePublicClient = vi.fn();
 
 vi.mock("wagmi", () => ({
@@ -12,6 +13,8 @@ vi.mock("wagmi", () => ({
 describe("useDeedEvents", () => {
   beforeEach(() => {
     mockGetLogs.mockReset();
+    mockGetBlockNumber.mockReset();
+    mockGetBlockNumber.mockResolvedValue(42009325n);
     mockUsePublicClient.mockReset();
   });
 
@@ -29,7 +32,7 @@ describe("useDeedEvents", () => {
       },
     ];
     mockGetLogs.mockResolvedValue(logs);
-    mockUsePublicClient.mockReturnValue({ getLogs: mockGetLogs });
+    mockUsePublicClient.mockReturnValue({ getLogs: mockGetLogs, getBlockNumber: mockGetBlockNumber });
 
     const { result } = renderHook(() => useDeedEvents());
 
@@ -53,7 +56,7 @@ describe("useDeedEvents", () => {
       },
     ];
     mockGetLogs.mockResolvedValue(logs);
-    mockUsePublicClient.mockReturnValue({ getLogs: mockGetLogs });
+    mockUsePublicClient.mockReturnValue({ getLogs: mockGetLogs, getBlockNumber: mockGetBlockNumber });
 
     const { result } = renderHook(() => useDeedEvents());
 
@@ -84,7 +87,7 @@ describe("useDeedEvents", () => {
       },
     ];
     mockGetLogs.mockResolvedValue(logs);
-    mockUsePublicClient.mockReturnValue({ getLogs: mockGetLogs });
+    mockUsePublicClient.mockReturnValue({ getLogs: mockGetLogs, getBlockNumber: mockGetBlockNumber });
 
     const { result } = renderHook(() => useDeedEvents());
 
@@ -98,7 +101,7 @@ describe("useDeedEvents", () => {
 
   it("filters by address when provided", async () => {
     mockGetLogs.mockResolvedValue([]);
-    mockUsePublicClient.mockReturnValue({ getLogs: mockGetLogs });
+    mockUsePublicClient.mockReturnValue({ getLogs: mockGetLogs, getBlockNumber: mockGetBlockNumber });
 
     renderHook(() => useDeedEvents("0xfilteraddr"));
 
@@ -115,7 +118,7 @@ describe("useDeedEvents", () => {
 
   it("sets isError true on fetch failure", async () => {
     mockGetLogs.mockRejectedValue(new Error("RPC error"));
-    mockUsePublicClient.mockReturnValue({ getLogs: mockGetLogs });
+    mockUsePublicClient.mockReturnValue({ getLogs: mockGetLogs, getBlockNumber: mockGetBlockNumber });
     vi.spyOn(console, "error").mockImplementation(() => {});
 
     const { result } = renderHook(() => useDeedEvents());

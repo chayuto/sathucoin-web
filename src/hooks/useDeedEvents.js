@@ -4,6 +4,7 @@ import { CONTRACT_ADDRESS, DEPLOYMENT_BLOCK } from "../config";
 import abi from "../abi/SaThuCoin.json";
 
 const deedRewardedEvent = abi.find((item) => item.type === "event" && item.name === "DeedRewarded");
+const CHUNK_SIZE = 50_000n;
 
 export function useDeedEvents(address) {
   const publicClient = usePublicClient();
@@ -18,15 +19,22 @@ export function useDeedEvents(address) {
       setIsLoading(true);
       setIsError(false);
       try {
-        const logs = await publicClient.getLogs({
-          address: CONTRACT_ADDRESS,
-          event: deedRewardedEvent,
-          args: address ? { recipient: address } : undefined,
-          fromBlock: DEPLOYMENT_BLOCK,
-          toBlock: "latest",
-        });
+        const latestBlock = await publicClient.getBlockNumber();
+        const allLogs = [];
 
-        const parsed = logs.map((log) => ({
+        for (let from = DEPLOYMENT_BLOCK; from <= latestBlock; from += CHUNK_SIZE) {
+          const to = from + CHUNK_SIZE - 1n > latestBlock ? latestBlock : from + CHUNK_SIZE - 1n;
+          const logs = await publicClient.getLogs({
+            address: CONTRACT_ADDRESS,
+            event: deedRewardedEvent,
+            args: address ? { recipient: address } : undefined,
+            fromBlock: from,
+            toBlock: to,
+          });
+          allLogs.push(...logs);
+        }
+
+        const parsed = allLogs.map((log) => ({
           recipient: log.args.recipient,
           amount: log.args.amount,
           deed: log.args.deed,
