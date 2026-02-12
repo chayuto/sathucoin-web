@@ -69,7 +69,11 @@
     "faq_address_q": "Is my Ethereum address the same as my Base address?",
     "faq_address_a": "Yes. Your Ethereum wallet address works on Base as well.",
     "faq_missing_q": "I don't see my tokens?",
-    "faq_missing_a": "Make sure you have added the SATHU custom token in MetaMask and that you are checking the correct address."
+    "faq_missing_a": "Make sure you have added the SATHU custom token in MetaMask and that you are checking the correct address.",
+    "deed_boon_unit": "boon",
+    "deed_view_tx": "View transaction",
+    "deed_expand": "Show full text",
+    "deed_collapse": "Show less"
   },
   "institutions": {
     "title": "For Institutions",
