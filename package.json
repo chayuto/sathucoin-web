@@ -9,7 +9,9 @@
     "preview": "vite preview",
     "lint": "eslint .",
     "test": "vitest run",
-    "test:watch": "vitest"
+    "test:watch": "vitest",
+    "test:integration": "vitest run --config vitest.integration.config.js",
+    "test:all": "vitest run --config vitest.integration.config.js && vitest run"
   },
   "dependencies": {
     "@rainbow-me/rainbowkit": "^2.2.3",

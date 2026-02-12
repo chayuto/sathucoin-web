@@ -1,10 +1,8 @@
 import { useTranslation } from "react-i18next";
-import { formatUnits } from "viem";
 import BalanceChecker from "../components/BalanceChecker";
 import DeedList from "../components/DeedList";
 import { useDeedEvents } from "../hooks/useDeedEvents";
 import { useAddToMetaMask } from "../hooks/useAddToMetaMask";
-import { TOKEN_DECIMALS } from "../config";
 import { useState } from "react";
 
 function FaqItem({ question, answer }) {
@@ -53,12 +51,6 @@ export default function Donors() {
     { q: t("donors.faq_missing_q"), a: t("donors.faq_missing_a") },
   ];
 
-  const deedTableRows = recentDeeds?.map((d) => ({
-    name: d.deed,
-    amount: `${Number(formatUnits(d.amount, TOKEN_DECIMALS)).toLocaleString()} SATHU`,
-    date: `Block #${d.blockNumber?.toString()}`,
-  }));
-
   const handleAddToken = () => {
     if (!metamaskAvailable) {
       alert(t("donors.metamask_not_installed"));
@@ -84,7 +76,7 @@ export default function Donors() {
       {/* Deed History */}
       <section className="animate-fade-in-up-delay-2">
         <h2 className="gold-underline mb-5 text-lg font-bold text-warm-900">{t("donors.deed_history")}</h2>
-        <DeedList deeds={deedTableRows} loading={deedsLoading} />
+        <DeedList deeds={recentDeeds} loading={deedsLoading} />
       </section>
 
       {/* Wallet Setup Guide */}

@@ -69,7 +69,11 @@
     "faq_address_q": "ที่อยู่ Ethereum กับ Base ใช้ที่อยู่เดียวกันไหม?",
     "faq_address_a": "ใช่ ที่อยู่ wallet ของ Ethereum ใช้งานบน Base ได้เลย",
     "faq_missing_q": "ทำไมไม่เห็นโทเคนใน wallet?",
-    "faq_missing_a": "ลองเพิ่ม SATHU เป็น custom token ใน MetaMask ก่อน แล้วตรวจสอบว่าใช้ที่อยู่ถูกต้อง"
+    "faq_missing_a": "ลองเพิ่ม SATHU เป็น custom token ใน MetaMask ก่อน แล้วตรวจสอบว่าใช้ที่อยู่ถูกต้อง",
+    "deed_boon_unit": "บุญ",
+    "deed_view_tx": "ดูรายการ",
+    "deed_expand": "ดูทั้งหมด",
+    "deed_collapse": "ย่อข้อความ"
   },
   "institutions": {
     "title": "สำหรับองค์กร",

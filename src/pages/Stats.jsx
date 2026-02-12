@@ -6,6 +6,7 @@ import { useDeedEvents } from "../hooks/useDeedEvents";
 import DeedList from "../components/DeedList";
 import { CONTRACT_ADDRESS, BASESCAN_URL, TOKEN_DECIMALS } from "../config";
 
+
 export default function Stats() {
   const { t } = useTranslation();
   const { totalSupply, cap, maxDailyMint, dailyMinted, dailyMintedFormatted, maxDailyMintFormatted, capFormatted } = useTokenStats();
@@ -25,12 +26,6 @@ export default function Stats() {
     { name: t("stats.remaining"), value: remainingNum },
   ];
   const COLORS = ["#0052FF", "#E5E7EB"];
-
-  const deedTableRows = recentDeeds?.map((d) => ({
-    name: d.deed,
-    amount: `${Number(formatUnits(d.amount, TOKEN_DECIMALS)).toLocaleString()} SATHU`,
-    date: `Block #${d.blockNumber?.toString()}`,
-  }));
 
   return (
     <div className="space-y-10">
@@ -97,7 +92,7 @@ export default function Stats() {
       {/* Recent Deeds */}
       <section className="animate-fade-in-up-delay-3">
         <h2 className="gold-underline mb-5 text-lg font-bold text-warm-900">{t("stats.recent_deeds_title")}</h2>
-        <DeedList deeds={deedTableRows} loading={deedsLoading} />
+        <DeedList deeds={recentDeeds} loading={deedsLoading} />
       </section>
 
       {/* Contract Info */}
