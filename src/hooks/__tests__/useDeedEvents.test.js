@@ -117,7 +117,7 @@ describe("useDeedEvents", () => {
   });
 
   it("sets isError true on fetch failure", async () => {
-    mockGetLogs.mockRejectedValue(new Error("RPC error"));
+    mockGetBlockNumber.mockRejectedValue(new Error("RPC error"));
     mockUsePublicClient.mockReturnValue({ getLogs: mockGetLogs, getBlockNumber: mockGetBlockNumber });
     vi.spyOn(console, "error").mockImplementation(() => {});
 

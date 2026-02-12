@@ -5,6 +5,20 @@ import abi from "../abi/SaThuCoin.json";
 
 const deedRewardedEvent = abi.find((item) => item.type === "event" && item.name === "DeedRewarded");
 const CHUNK_SIZE = 50_000n;
+const MAX_RETRIES = 3;
+const BASE_DELAY_MS = 1000;
+
+async function fetchLogsWithRetry(publicClient, params) {
+  for (let attempt = 0; attempt <= MAX_RETRIES; attempt++) {
+    try {
+      return await publicClient.getLogs(params);
+    } catch (err) {
+      if (attempt === MAX_RETRIES) throw err;
+      const delay = BASE_DELAY_MS * 2 ** attempt;
+      await new Promise((r) => setTimeout(r, delay));
+    }
+  }
+}
 
 export function useDeedEvents(address) {
   const publicClient = usePublicClient();
@@ -24,7 +38,7 @@ export function useDeedEvents(address) {
 
         for (let from = DEPLOYMENT_BLOCK; from <= latestBlock; from += CHUNK_SIZE) {
           const to = from + CHUNK_SIZE - 1n > latestBlock ? latestBlock : from + CHUNK_SIZE - 1n;
-          const logs = await publicClient.getLogs({
+          const logs = await fetchLogsWithRetry(publicClient, {
             address: CONTRACT_ADDRESS,
             event: deedRewardedEvent,
             args: address ? { recipient: address } : undefined,
