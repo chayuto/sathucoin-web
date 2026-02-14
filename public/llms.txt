@@ -1,0 +1,35 @@
+# SaThuCoin (สาธุคอยน์)
+
+> Every token represents a verified act of generosity.
+
+SaThuCoin (SATHU) is a recognition token on the Base blockchain (Ethereum L2 by Coinbase). It is minted and given to charitable donors when their donation is verified by a participating institution. Each token serves as permanent, verifiable proof of generosity recorded on-chain.
+
+## Key Facts
+
+- **Token Name**: SaThuCoin (SATHU / สาธุคอยน์)
+- **Chain**: Base Mainnet (Chain ID: 8453)
+- **Contract Address**: 0x974FCaC6add872B946917eD932581CA9f7188AbD
+- **Type**: ERC-20 recognition token
+- **Cost to donors**: Free — no fees or charges
+- **Purpose**: Permanent on-chain proof of charitable donations
+
+## How It Works
+
+1. A donor makes a contribution to a participating institution (temple, charity, foundation)
+2. The institution verifies the donation and submits it to the SaThuCoin smart contract
+3. SATHU tokens are minted and sent directly to the donor's wallet
+4. The deed is permanently recorded on the Base blockchain
+
+## Pages
+
+- [Home](https://chayuto.github.io/sathucoin-web/) — Overview, live token stats, supply progress
+- [For Donors](https://chayuto.github.io/sathucoin-web/donors) — Balance checker, deed history, wallet setup guide, FAQ
+- [For Institutions](https://chayuto.github.io/sathucoin-web/institutions) — How to participate, integration info, FAQ
+- [Token Stats](https://chayuto.github.io/sathucoin-web/stats) — Live on-chain data, supply charts, recent deeds
+- [About](https://chayuto.github.io/sathucoin-web/about) — Mission, how it works, resources
+
+## Links
+
+- Website: https://chayuto.github.io/sathucoin-web/
+- Contract: https://basescan.org/address/0x974FCaC6add872B946917eD932581CA9f7188AbD
+- GitHub: https://github.com/chayuto/SaThuCoin

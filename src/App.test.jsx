@@ -1,5 +1,5 @@
 import { render, screen } from "@testing-library/react";
-import { describe, it, expect, vi } from "vitest";
+import { describe, it, expect, vi, beforeEach } from "vitest";
 import App from "./App";
 
 vi.mock("./hooks/useTokenStats", () => ({
@@ -21,6 +21,10 @@ vi.mock("./hooks/useDeedEvents", () => ({
 }));
 
 describe("App", () => {
+  beforeEach(() => {
+    window.history.pushState({}, "", "/sathucoin-web/");
+  });
+
   it("renders without crashing", () => {
     render(<App />);
     expect(screen.getAllByText("SaThuCoin").length).toBeGreaterThan(0);

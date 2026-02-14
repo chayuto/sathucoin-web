@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  <url>
+    <loc>https://chayuto.github.io/sathucoin-web/</loc>
+    <lastmod>2026-02-14</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+    <xhtml:link rel="alternate" hreflang="th" href="https://chayuto.github.io/sathucoin-web/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://chayuto.github.io/sathucoin-web/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://chayuto.github.io/sathucoin-web/" />
+  </url>
+  <url>
+    <loc>https://chayuto.github.io/sathucoin-web/donors</loc>
+    <lastmod>2026-02-14</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="th" href="https://chayuto.github.io/sathucoin-web/donors" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://chayuto.github.io/sathucoin-web/donors" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://chayuto.github.io/sathucoin-web/donors" />
+  </url>
+  <url>
+    <loc>https://chayuto.github.io/sathucoin-web/institutions</loc>
+    <lastmod>2026-02-14</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="th" href="https://chayuto.github.io/sathucoin-web/institutions" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://chayuto.github.io/sathucoin-web/institutions" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://chayuto.github.io/sathucoin-web/institutions" />
+  </url>
+  <url>
+    <loc>https://chayuto.github.io/sathucoin-web/stats</loc>
+    <lastmod>2026-02-14</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="th" href="https://chayuto.github.io/sathucoin-web/stats" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://chayuto.github.io/sathucoin-web/stats" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://chayuto.github.io/sathucoin-web/stats" />
+  </url>
+  <url>
+    <loc>https://chayuto.github.io/sathucoin-web/about</loc>
+    <lastmod>2026-02-14</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="th" href="https://chayuto.github.io/sathucoin-web/about" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://chayuto.github.io/sathucoin-web/about" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://chayuto.github.io/sathucoin-web/about" />
+  </url>
+</urlset>

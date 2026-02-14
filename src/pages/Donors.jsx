@@ -3,6 +3,7 @@ import BalanceChecker from "../components/BalanceChecker";
 import DeedList from "../components/DeedList";
 import { useDeedEvents } from "../hooks/useDeedEvents";
 import { useAddToMetaMask } from "../hooks/useAddToMetaMask";
+import PageMeta from "../components/PageMeta";
 import { useState } from "react";
 
 function FaqItem({ question, answer }) {
@@ -59,8 +60,32 @@ export default function Donors() {
     addToken();
   };
 
+  const faqJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": faqs.map((faq) => ({
+      "@type": "Question",
+      "name": faq.q,
+      "acceptedAnswer": { "@type": "Answer", "text": faq.a },
+    })),
+  };
+
+  const howToJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "HowTo",
+    "name": t("donors.wallet_setup_title"),
+    "step": walletSteps.map((step) => ({
+      "@type": "HowToStep",
+      "position": step.num,
+      "text": step.text,
+    })),
+  };
+
   return (
     <div className="space-y-10">
+      <PageMeta title={t("seo.donors_title")} description={t("seo.donors_description")} path="donors" />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(howToJsonLd) }} />
       {/* Header */}
       <div className="animate-fade-in-up">
         <h1 className="text-3xl font-bold text-warm-900">{t("donors.title")}</h1>

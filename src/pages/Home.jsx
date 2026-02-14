@@ -6,6 +6,7 @@ import { useTokenStats } from "../hooks/useTokenStats";
 import StatsCard from "../components/StatsCard";
 import SupplyProgress from "../components/SupplyProgress";
 import ContractStatus from "../components/ContractStatus";
+import PageMeta from "../components/PageMeta";
 import { TOKEN_DECIMALS } from "../config";
 
 export default function Home() {
@@ -48,8 +49,9 @@ export default function Home() {
 
   return (
     <div className="space-y-10">
+      <PageMeta title={t("seo.home_title")} description={t("seo.home_description")} />
       {/* Hero */}
-      <section className="animate-fade-in-up relative overflow-hidden rounded-3xl shadow-xl">
+      <header className="animate-fade-in-up relative overflow-hidden rounded-3xl shadow-xl">
         <img
           src={bannerSrc}
           alt={t("common.alt_banner")}
@@ -64,7 +66,7 @@ export default function Home() {
             {t("home.hero_description")}
           </p>
         </div>
-      </section>
+      </header>
 
       {/* Live Stats */}
       <section className="animate-fade-in-up-delay-1">
