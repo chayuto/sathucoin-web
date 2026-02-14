@@ -141,5 +141,17 @@
     "resources_title": "Resources",
     "basescan_link": "View Contract on BaseScan",
     "github_link": "View Source on GitHub"
+  },
+  "seo": {
+    "home_title": "SaThuCoin — Every Token Is a Record of Generosity",
+    "home_description": "SaThuCoin (SATHU) is a token on the Base blockchain given to donors when their charitable donation is verified. Permanent proof of generosity on-chain.",
+    "donors_title": "For Donors — SaThuCoin",
+    "donors_description": "Check your SaThuCoin balance, view deed history, set up your wallet, and learn how SATHU tokens recognize your charitable donations.",
+    "institutions_title": "For Institutions — SaThuCoin",
+    "institutions_description": "Learn how your temple, charity, or foundation can participate in SaThuCoin to recognize donors with on-chain tokens.",
+    "stats_title": "Token Stats — SaThuCoin",
+    "stats_description": "Live on-chain data for SaThuCoin (SATHU) on Base mainnet. Supply distribution, daily minting progress, and recent deeds.",
+    "about_title": "About — SaThuCoin",
+    "about_description": "Learn about SaThuCoin's mission to create transparent, permanent records of charitable giving on the Base blockchain."
   }
 }

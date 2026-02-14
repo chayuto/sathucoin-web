@@ -4,6 +4,7 @@ import { PieChart, Pie, Cell, Legend, ResponsiveContainer } from "recharts";
 import { useTokenStats } from "../hooks/useTokenStats";
 import { useDeedEvents } from "../hooks/useDeedEvents";
 import DeedList from "../components/DeedList";
+import PageMeta from "../components/PageMeta";
 import { CONTRACT_ADDRESS, BASESCAN_URL, TOKEN_DECIMALS } from "../config";
 
 
@@ -29,6 +30,7 @@ export default function Stats() {
 
   return (
     <div className="space-y-10">
+      <PageMeta title={t("seo.stats_title")} description={t("seo.stats_description")} path="stats" />
       {/* Header */}
       <div className="animate-fade-in-up">
         <h1 className="text-3xl font-bold text-warm-900">{t("stats.title")}</h1>

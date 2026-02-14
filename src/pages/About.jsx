@@ -1,6 +1,7 @@
 import { useTranslation } from "react-i18next";
 import { HiOutlineHandRaised, HiOutlineShieldCheck, HiOutlineCurrencyDollar, HiOutlineLink, HiOutlineMagnifyingGlass, HiOutlineCodeBracket } from "react-icons/hi2";
 import { BASESCAN_URL, CONTRACT_ADDRESS, GITHUB_URL } from "../config";
+import PageMeta from "../components/PageMeta";
 
 export default function About() {
   const { t } = useTranslation();
@@ -12,6 +13,17 @@ export default function About() {
     { num: "3", text: t("about.how_step_3"), icon: <HiOutlineCurrencyDollar className="h-5 w-5" /> },
     { num: "4", text: t("about.how_step_4"), icon: <HiOutlineLink className="h-5 w-5" /> },
   ];
+
+  const howToJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "HowTo",
+    "name": t("about.how_it_works_title"),
+    "step": steps.map((step) => ({
+      "@type": "HowToStep",
+      "position": step.num,
+      "text": step.text,
+    })),
+  };
 
   const resources = [
     {
@@ -28,6 +40,8 @@ export default function About() {
 
   return (
     <div className="space-y-10">
+      <PageMeta title={t("seo.about_title")} description={t("seo.about_description")} path="about" />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(howToJsonLd) }} />
       {/* Header */}
       <div className="animate-fade-in-up">
         <h1 className="text-3xl font-bold text-warm-900">{t("about.title")}</h1>

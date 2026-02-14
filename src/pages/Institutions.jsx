@@ -2,6 +2,7 @@ import { useState } from "react";
 import { useTranslation } from "react-i18next";
 import { HiOutlineDevicePhoneMobile, HiOutlineClipboardDocumentList, HiOutlineCurrencyDollar, HiOutlinePencilSquare } from "react-icons/hi2";
 import { CONTRACT_ADDRESS, BASESCAN_URL } from "../config";
+import PageMeta from "../components/PageMeta";
 
 function FaqItem({ question, answer }) {
   const [open, setOpen] = useState(false);
@@ -51,8 +52,20 @@ export default function Institutions() {
     { q: t("institutions.faq_wallet_q"), a: t("institutions.faq_wallet_a") },
   ];
 
+  const faqJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": faqs.map((faq) => ({
+      "@type": "Question",
+      "name": faq.q,
+      "acceptedAnswer": { "@type": "Answer", "text": faq.a },
+    })),
+  };
+
   return (
     <div className="space-y-10">
+      <PageMeta title={t("seo.institutions_title")} description={t("seo.institutions_description")} path="institutions" />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }} />
       {/* Header */}
       <div className="animate-fade-in-up">
         <h1 className="text-3xl font-bold text-warm-900">{t("institutions.title")}</h1>
