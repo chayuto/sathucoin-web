@@ -22,14 +22,14 @@ SaThuCoin (SATHU) is a recognition token on the Base blockchain (Ethereum L2 by 
 
 ## Pages
 
-- [Home](https://chayuto.github.io/sathucoin-web/) — Overview, live token stats, supply progress
-- [For Donors](https://chayuto.github.io/sathucoin-web/donors) — Balance checker, deed history, wallet setup guide, FAQ
-- [For Institutions](https://chayuto.github.io/sathucoin-web/institutions) — How to participate, integration info, FAQ
-- [Token Stats](https://chayuto.github.io/sathucoin-web/stats) — Live on-chain data, supply charts, recent deeds
-- [About](https://chayuto.github.io/sathucoin-web/about) — Mission, how it works, resources
+- [Home](https://sathucoin.happycareth.com/) — Overview, live token stats, supply progress
+- [For Donors](https://sathucoin.happycareth.com/donors) — Balance checker, deed history, wallet setup guide, FAQ
+- [For Institutions](https://sathucoin.happycareth.com/institutions) — How to participate, integration info, FAQ
+- [Token Stats](https://sathucoin.happycareth.com/stats) — Live on-chain data, supply charts, recent deeds
+- [About](https://sathucoin.happycareth.com/about) — Mission, how it works, resources
 
 ## Links
 
-- Website: https://chayuto.github.io/sathucoin-web/
+- Website: https://sathucoin.happycareth.com/
 - Contract: https://basescan.org/address/0x974FCaC6add872B946917eD932581CA9f7188AbD
 - GitHub: https://github.com/chayuto/SaThuCoin

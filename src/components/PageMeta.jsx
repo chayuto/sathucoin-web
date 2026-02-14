@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 
-const BASE_URL = "https://chayuto.github.io/sathucoin-web";
+const BASE_URL = "https://sathucoin.happycareth.com";
 
 export default function PageMeta({ title, description, path = "" }) {
   const canonicalUrl = `${BASE_URL}/${path}`;

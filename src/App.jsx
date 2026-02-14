@@ -19,7 +19,7 @@ export default function App() {
     <WagmiProvider config={wagmiConfig}>
       <QueryClientProvider client={queryClient}>
         <RainbowKitProvider>
-          <BrowserRouter basename="/sathucoin-web/">
+          <BrowserRouter>
             <Routes>
               <Route element={<Layout />}>
                 <Route index element={<Home />} />

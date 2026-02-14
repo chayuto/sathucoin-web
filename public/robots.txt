@@ -13,4 +13,4 @@ Allow: /
 User-agent: Google-Extended
 Allow: /
 
-Sitemap: https://chayuto.github.io/sathucoin-web/sitemap.xml
+Sitemap: https://sathucoin.happycareth.com/sitemap.xml
