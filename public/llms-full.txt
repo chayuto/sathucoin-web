@@ -1,0 +1,193 @@
+# SaThuCoin (สาธุคอยน์) — Complete Reference
+
+> Every token represents a verified act of generosity.
+> ทุกโทเคนคือบันทึกแห่งการทำบุญที่ยืนยันแล้ว
+
+SaThuCoin (SATHU) is a recognition token on the Base blockchain (Ethereum L2 by Coinbase). It is minted and given to charitable donors when their donation is verified by a participating institution — such as a temple, charity, or foundation. Each token serves as permanent, verifiable proof of generosity recorded on-chain.
+
+The name "สาธุ" (Sathu) comes from the Thai/Pali word meaning "well done" or "amen" — traditionally spoken to express approval and shared merit in Buddhist charitable acts.
+
+---
+
+## Key Facts
+
+- **Token Name**: SaThuCoin
+- **Symbol**: SATHU
+- **Thai Name**: สาธุคอยน์
+- **Standard**: ERC-20
+- **Chain**: Base Mainnet (Chain ID: 8453)
+- **Contract Address**: 0x974FCaC6add872B946917eD932581CA9f7188AbD
+- **Deployment Block**: 41959326
+- **Decimals**: 18
+- **Cost to donors**: Free — no fees or charges
+- **Purpose**: Permanent on-chain proof of charitable donations
+- **Nature**: Recognition token (non-tradable in intent, given as acknowledgement)
+
+---
+
+## How It Works
+
+1. **Donation**: A donor makes a contribution to a participating institution (temple, charity, foundation).
+2. **Verification**: The institution verifies the donation and submits it to the SaThuCoin smart contract.
+3. **Minting**: SATHU tokens are minted and sent directly to the donor's wallet address.
+4. **Recording**: The deed is permanently recorded on the Base blockchain, including the institution name and deed description.
+
+The entire process is free for donors. They only need to provide their Ethereum/Base wallet address (which starts with 0x) to the institution when donating.
+
+---
+
+## Smart Contract Details
+
+The SaThuCoin smart contract is deployed on Base Mainnet and includes the following features:
+
+### Read Functions
+- `name()` → "SaThuCoin"
+- `symbol()` → "SATHU"
+- `decimals()` → 18
+- `totalSupply()` → Total tokens minted so far
+- `cap()` → Maximum supply cap
+- `balanceOf(address)` → Token balance for a given wallet
+- `paused()` → Whether minting is currently paused
+- `dailyMintedToday()` → Tokens minted in the current day
+- `MAX_DAILY_MINT()` → Maximum tokens that can be minted per day
+- `MAX_MINT_PER_TX()` → Maximum tokens per single transaction
+
+### Events
+- `DeedRewarded(address indexed recipient, uint256 amount, string deed)` — Emitted when tokens are minted for a donor. The `deed` field contains a human-readable description of the charitable act.
+- `Transfer(address indexed from, address indexed to, uint256 value)` — Standard ERC-20 transfer event.
+
+### Safety Features
+- Supply cap prevents unlimited minting
+- Daily mint limit controls the rate of token issuance
+- Per-transaction limit prevents large single mints
+- Pausable by contract owner for emergencies
+
+---
+
+## For Donors
+
+### Checking Your Balance
+Donors can check their SATHU balance on the website by:
+1. Pasting their wallet address (0x...) into the balance checker
+2. Or connecting their wallet directly (MetaMask, etc.)
+
+The website displays both the token balance and the full deed history for any address.
+
+### Wallet Setup Guide
+1. Install MetaMask from metamask.io
+2. Create a wallet and save your recovery phrase securely
+3. Copy your wallet address (starts with 0x)
+4. Share your address with the donation organization
+5. After the donation is verified, tokens appear in your wallet automatically
+
+### Adding SATHU to MetaMask
+To see SATHU in your MetaMask wallet, add it as a custom token:
+- Network: Base Mainnet
+- Contract Address: 0x974FCaC6add872B946917eD932581CA9f7188AbD
+- Symbol: SATHU
+- Decimals: 18
+
+### Donor FAQ
+
+**Q: Does this cost me anything?**
+A: No. SaThuCoin is given to you as recognition for your donation. There are no fees or charges.
+
+**Q: What can I do with SATHU?**
+A: SATHU is a recognition token. It serves as permanent, verifiable proof of your donation on the blockchain.
+
+**Q: Which network is this on?**
+A: SaThuCoin is on Base, an Ethereum Layer 2 network by Coinbase. It is fast and low-cost.
+
+**Q: Is my Ethereum address the same as my Base address?**
+A: Yes. Your Ethereum wallet address works on Base as well.
+
+**Q: I don't see my tokens?**
+A: Make sure you have added the SATHU custom token in MetaMask and that you are checking the correct address.
+
+---
+
+## For Institutions
+
+### What Institutions Need to Know
+SaThuCoin provides a modern way to acknowledge donors. Institutions do not need to handle cryptocurrency — they only need to collect the donor's wallet address. Tokens are minted and sent automatically when the donation is reported to the SaThuCoin contract.
+
+### What to Collect from Donors
+Ask donors for their Ethereum/Base wallet address. It starts with 0x and is exactly 42 characters long.
+
+Example address: 0xEeB5c90edaA4a029752273644D40801E83329268
+
+Suggested text for donors: "Please provide your Ethereum/Base wallet address to receive your SaThuCoin reward."
+
+### Integration Information
+- Contract Address: 0x974FCaC6add872B946917eD932581CA9f7188AbD
+- Chain: Base Mainnet (Chain ID: 8453)
+- To verify a donor received tokens, search their address on BaseScan.
+
+### Institution FAQ
+
+**Q: Do we need to handle cryptocurrency?**
+A: No. You only need to collect the donor's wallet address. Tokens are minted and sent automatically.
+
+**Q: Does the donor need to pay anything?**
+A: No. Receiving SATHU tokens is completely free for donors.
+
+**Q: How do we verify a token was sent?**
+A: Search the donor's wallet address on BaseScan to see their token balance and transaction history.
+
+**Q: What wallet should we recommend to donors?**
+A: We recommend MetaMask. Donors can find a setup guide on the For Donors page.
+
+---
+
+## About the Project
+
+### Mission
+SaThuCoin exists to create a transparent, permanent record of charitable giving. Every act of generosity deserves recognition that lasts forever. By leveraging blockchain technology, donors receive verifiable proof of their contributions, while institutions have a modern way to acknowledge and reward their supporters.
+
+### Why Base?
+Base is an Ethereum Layer 2 network built by Coinbase. It offers:
+- Low transaction fees
+- Fast confirmation times
+- Ethereum-level security
+- Wide wallet compatibility (any Ethereum wallet works)
+
+### Why Blockchain for Donations?
+- **Permanence**: Records cannot be altered or deleted
+- **Transparency**: Anyone can verify donations on-chain
+- **Trustlessness**: No central authority can modify the history
+- **Accessibility**: Works globally with just a wallet address
+
+---
+
+## Thai Cultural Context
+
+In Thai Buddhist culture, "ทำบุญ" (tham boon / making merit) is a deeply important practice. Donations to temples and charitable organizations are seen as acts that generate spiritual merit. "สาธุ" (sathu) is spoken to express approval, gratitude, and shared joy in these acts of generosity.
+
+SaThuCoin bridges this cultural tradition with modern blockchain technology, creating a permanent digital record of merit-making that respects and extends the spirit of "อนุโมทนา" (anumoethana — rejoicing in others' generosity).
+
+Key Thai terms used in the project:
+- **สาธุ** (Sathu) — "Well done" / "Amen" — expressing approval of a good deed
+- **ทำบุญ** (Tham Boon) — Making merit through charitable acts
+- **อนุโมทนา** (Anumoethana) — Rejoicing in the merit of others
+- **บุญ** (Boon) — Merit, spiritual credit from good deeds
+- **ผู้บริจาค** (Phu Borijak) — Donor
+- **องค์กร** (Ongkon) — Organization / Institution
+
+---
+
+## Website Pages
+
+- **Home** (https://sathucoin.happycareth.com/) — Project overview with live token supply stats, supply progress chart, and navigation to all sections.
+- **For Donors** (https://sathucoin.happycareth.com/donors) — Balance checker (by address or wallet connect), deed history viewer, MetaMask setup guide, add-token button, and FAQ.
+- **For Institutions** (https://sathucoin.happycareth.com/institutions) — Explanation of the system, step-by-step process, what data to collect, integration details, and FAQ.
+- **Token Stats** (https://sathucoin.happycareth.com/stats) — Live supply distribution chart, daily minting progress, recent deeds list, and contract information.
+- **About** (https://sathucoin.happycareth.com/about) — Mission statement, how-it-works timeline, and links to BaseScan and GitHub.
+
+---
+
+## Links
+
+- Website: https://sathucoin.happycareth.com/
+- Contract on BaseScan: https://basescan.org/address/0x974FCaC6add872B946917eD932581CA9f7188AbD
+- Source Code: https://github.com/chayuto/SaThuCoin
+- Frontend Source: https://github.com/chayuto/sathucoin-web
