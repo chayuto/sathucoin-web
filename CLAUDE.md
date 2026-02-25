@@ -15,16 +15,16 @@ Read-only frontend for the SaThuCoin (SATHU) ERC-20 token on Base (chain 8453). 
 
 ## Commands
 
-- `npm run dev` — Start dev server
-- `npm run build` — Build to `dist/`
-- `npm run lint` — ESLint flat config
-- `npm run test` — Run vitest unit tests
-- `npm run test:integration` — Run integration tests (requires live RPC)
-- `npm run test:coverage` — Run tests with coverage report
-- `npm run validate:i18n` — Check i18n key consistency between locales and source
-- `npm run preview` — Preview production build
+- `pnpm dev` — Start dev server
+- `pnpm build` — Build to `dist/`
+- `pnpm lint` — ESLint flat config
+- `pnpm test` — Run vitest unit tests
+- `pnpm test:integration` — Run integration tests (requires live RPC)
+- `pnpm test:coverage` — Run tests with coverage report
+- `pnpm validate:i18n` — Check i18n key consistency between locales and source
+- `pnpm preview` — Preview production build
 
-Always run `npm run lint` and `npm run test` before considering work done.
+Always run `pnpm lint` and `pnpm test` before considering work done.
 
 ## Project Structure
 
@@ -62,7 +62,7 @@ docs/
 - Keys are nested by section: `common.*`, `home.*`, `donors.*`, `institutions.*`, `stats.*`, `about.*`, `seo.*`.
 - When adding new UI text, add the key to BOTH `en.json` and `th.json`.
 - Thai is the primary audience language (fallback). Refer to `docs/thai-glossary.md` for natural Thai copy.
-- Run `npm run validate:i18n` to verify key consistency.
+- Run `pnpm validate:i18n` to verify key consistency.
 
 ### React
 

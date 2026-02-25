@@ -14,19 +14,19 @@ Read-only frontend for the SaThuCoin (SATHU) ERC-20 token on Base. Displays live
 ## Getting Started
 
 ```bash
-npm install
-npm run dev
+pnpm install
+pnpm dev
 ```
 
 ## Scripts
 
 | Command | Description |
 |---------|-------------|
-| `npm run dev` | Start development server |
-| `npm run build` | Production build to `dist/` |
-| `npm run preview` | Preview production build |
-| `npm run lint` | Run ESLint |
-| `npm run test` | Run tests |
+| `pnpm dev` | Start development server |
+| `pnpm build` | Production build to `dist/` |
+| `pnpm preview` | Preview production build |
+| `pnpm lint` | Run ESLint |
+| `pnpm test` | Run tests |
 
 ## Project Structure
 
