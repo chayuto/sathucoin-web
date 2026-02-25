@@ -93,9 +93,9 @@ Thai translations:
 
 After integration:
 
-1. `npm run build` passes without errors
-2. `npm run lint` passes without errors
-3. All existing tests still pass (`npm run test`)
+1. `pnpm build` passes without errors
+2. `pnpm lint` passes without errors
+3. All existing tests still pass (`pnpm test`)
 4. Hero banner displays correctly on mobile and desktop
 5. Token icon appears in navbar, stats, and as favicon
 6. Mascot appears in empty states and guide sections

@@ -1,3 +1,3 @@
 steps:
-  - run: npm ci
-  - run: npm run validate:i18n
+  - run: pnpm install
+  - run: pnpm validate:i18n

@@ -475,8 +475,8 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: 20
-      - run: npm ci
-      - run: npm run build
+      - run: pnpm install
+      - run: pnpm build
       - uses: actions/upload-pages-artifact@v4
         with:
           path: dist

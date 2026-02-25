@@ -1,14 +1,13 @@
 {
   "permissions": {
     "allow": [
-      "Bash(npm run dev)",
-      "Bash(npm run build)",
-      "Bash(npm run lint)",
-      "Bash(npm run test)",
-      "Bash(npm run preview)",
+      "Bash(pnpm dev)",
+      "Bash(pnpm build)",
+      "Bash(pnpm lint)",
+      "Bash(pnpm test)",
+      "Bash(pnpm preview)",
       "Bash(npx vitest*)",
-      "Bash(npm ci)",
-      "Bash(npm install)"
+      "Bash(pnpm install)"
     ]
   }
 }
